@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+<div class="container">
+    <h1>Фильм</h1>
+    <u1 class="list-group">
+
+        <li class="item list-group-item"><h3>Имя:[[${item.name}]]</h3></li>
+        <img data-th-src="@{/media/{path}(path=${item.path})}" width="30%">
+
+       </li>
+        <li class="item list-group-item">Описание: [[${item.plot}]]</li>
+        <li class="item list-group-item"> Жанр: [[${item.genre}]]</li>
+        <li class="item list-group-item">Год выпуска: [[${item.year}]]</li>
+        <li class="item list-group-item">Мировая премьера: [[${item.worldPremier}]]</li>
+        <li class="item list-group-item">Трейлер: </li>
+        <li>
+            <iframe width="560" height="315" data-th-src="${'https://www.youtube.com/embed/'+item.youtubeId}"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        </li>
+    </u1>
+</div>
+    <a data-th-href="@{/{id}/edit(id=${item.id})}" type="button" class="btn btn-outline-success">Изменить</a>
+    <a data-th-href="@{/{id}/remove(id=${item.id})}" type="button" class="btn btn-outline-danger">Удалить</a>
+</body>
+</html>

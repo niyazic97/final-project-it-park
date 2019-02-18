@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class=" container navbar navbar-expand-sm navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+            <li class=" nav-item active">
+                <a class="nav-link" href="/profile">Профиль <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/allFilms">Фильмы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="/logout">Выход</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<div class="container">
+    <form data-th-action="@{/search}" class="form-inline">
+
+            <input name="name" type="search" class="item-search" data-th-value="${name}">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск по фильмам</button>
+
+    </form>
+</div>
+<div class="container">
+
+    <form>
+        <u1 class="list-group">
+            <li data-th-each="item : ${items}" class="item list-group-item">
+                <a data-th-href="@{/{id}(id=${item.id})}">
+                    [[${item.name}]]
+                    [[${item.genre}]]
+                    [[${item.year}]]
+                    [[${item.worldPremier}]]
+                </a>
+
+                <a data-th-href="@{/film/{filmId}/subscribe(filmId=${item.id})}">Подписаться</a>
+                <a data-th-href="@{/film/{filmId}/unSubscribe(filmId=${item.id})}">Отписаться</a>
+
+            </li>
+
+        </u1>
+    </form>
+
+    <a data-th-href="@{/addFilms}" type="button" class="btn btn-outline-secondary">Добавить фильм</a>
+    <p data-th-if="${items.size() == 0}" class="no-items">Данного фильма не существует</p>
+
+</div>
+</body>
+</html>

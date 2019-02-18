@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+
+<form method ="post">
+    <u1 class="list-group">
+        <li class="list-group-item"><input  type="text" name="name" placeholder="Имя"data-th-value="${item.name}">
+        </li>
+
+        <li class="list-group-item"><input type="text" name="surName" placeholder="Фамилия"data-th-value="${item.surName}">
+        </li>
+
+        <li class="list-group-item"><input type="text" name="email" placeholder="email"data-th-value="${item.email}">
+
+         <li class="list-group-item"><input type="number" name="yearOfBirth" placeholder="Год рождения"data-th-value="${item.yearOfBirth}">
+        </li>
+    </u1>
+    <button name="save" type="submit">Сохранить</button>
+</form>
+</body>
+</html>

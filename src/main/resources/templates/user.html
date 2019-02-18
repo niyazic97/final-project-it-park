@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<nav class=" container navbar navbar-expand-sm navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+            <li class=" nav-item active">
+                <a class="nav-link" href="/profile">Профиль <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-th-href="@{/film/{id}/allFilms(id=${item.id})}">Мои подписки</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/allFilms">Фильмы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="/logout">Выход</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div class="container">
+    <div class="row pt-2">
+        <div class="col">
+            <div class="row">
+                <h1 class="pr-3">Профиль </h1>
+            </div>
+            <u1 class="list-group">
+
+                <li class="item list-group-item">Имя:[[${item.name}]]</li>
+                <li class="item list-group-item">Фамилия:[[${item.surName}]]</li>
+                <li class="item list-group-item"> Email:[[${item.email}]]</li>
+                <li class="item list-group-item">Год рождения:[[${item.yearOfBirth}]]</li>
+                <li><a type="button" data-th-href="@{/{id}/editUsers(id=${item.id})}">Изменить</a></li>
+            </u1>
+        </div>
+        <div class="col">
+            <img data-th-src="@{/media/{path}(path=${item.path})}" width="30%">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

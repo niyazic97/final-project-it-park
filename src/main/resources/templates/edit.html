@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<form method="post">
+   <u1 class="list-group">
+    <li class="list-group-item"> <input name="name" data-th-value="${item.name}"placeholder="Имя">
+    </li>
+       <li class="list-group-item"> <input name="genre" data-th-value="${item.genre}"placeholder="Жанр">
+       </li>
+       <li class="list-group-item"> <input name="year" data-th-value="${item.year}"placeholder="Год выпуска">
+       </li>
+       <li class="list-group-item"> <input name="plot" data-th-value="${item.plot}"placeholder="Описание">
+       </li>
+       <li class="list-group-item"> <input name="worldPremier" data-th-value="${item.worldPremier}"placeholder="Мировая премьера">
+       </li>
+       <li class="list-group-item"> <input name="youtubeId" data-th-value="${item.youtubeId}"placeholder="YouTube Id">
+       </li>
+
+   </u1>
+
+    <button name="save" type="submit">Сохранить</button>
+
+</form>
+</body>
+</html>

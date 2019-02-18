@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Пользователи</h1>
+    <u1 class="list-group">
+        <li data-th-each="item : ${items}" class="item list-group-item">
+
+            Имя:[[${item.name}]]
+            Фамилия:[[${item.surName}]]
+             Email:[[${item.email}]]
+            Год рождения:[[${item.yearOfBirth}]]
+
+            <a data-th-href="@{/{id}/editUsers(id=${item.id})}">Изменить</a>
+        </li>
+    </u1>
+
+</div>
+</body>
+</html>
